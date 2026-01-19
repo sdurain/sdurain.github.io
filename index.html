@@ -3,60 +3,172 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Sacha Durain — Applied Scientist (ML/CV) — uncertainty-aware models." />
   <title>Sacha DURAIN — Applied Scientist</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.5}
-    header{margin-bottom:28px}
-    h1{margin:0 0 8px}
-    .tag{display:inline-block;padding:4px 10px;border:1px solid #ddd;border-radius:999px;margin:4px 6px 0 0;font-size:14px}
-    .card{border:1px solid #e6e6e6;border-radius:14px;padding:16px;margin:14px 0}
-    .meta{color:#555}
-    a{color:inherit}
+    :root{
+      --bg:#ffffff; --text:#111; --muted:#555; --line:#e8e8e8; --card:#fff;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      max-width: 980px;
+      margin: 44px auto;
+      padding: 0 16px;
+      line-height: 1.55;
+      color: var(--text);
+      background: var(--bg);
+    }
+    header{
+      display:flex;
+      gap:24px;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1{margin:0 0 8px; font-size: 34px; letter-spacing: .2px;}
+    .subtitle{margin:0 0 10px; color: var(--muted); font-size: 16px;}
+    .links a{margin-right:12px; text-decoration:none; border-bottom:1px solid transparent}
+    .links a:hover{border-bottom-color:var(--text)}
+    .badge{
+      display:inline-block; padding:6px 10px; border:1px solid var(--line);
+      border-radius: 999px; margin: 6px 8px 0 0; font-size: 13px; color: #222;
+    }
+    .pill{
+      display:inline-block; padding:4px 10px; border:1px solid var(--line);
+      border-radius: 999px; margin: 6px 6px 0 0; font-size: 12px; color: #333;
+      background: #fafafa;
+    }
+    section{margin: 22px 0}
+    h2{margin: 22px 0 12px; font-size: 20px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: var(--card);
+    }
+    .card h3{margin:0 0 6px; font-size: 18px}
+    .meta{color: var(--muted); font-size: 14px; margin-bottom: 10px}
+    ul{margin: 10px 0 0 18px}
+    li{margin: 6px 0}
+    .kpi{
+      display:inline-block;
+      padding:2px 8px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:12px;
+      color:#333;
+      background:#fff;
+      margin-left: 6px;
+    }
+    .footer{
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (min-width: 900px){
+      .grid{grid-template-columns: 1fr 1fr;}
+    }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Ton Prénom Nom</h1>
-    <div class="meta">Applied Scientist (ML/CV) — Uncertainty-aware models · Available Oct–Dec 2026</div>
-    <div style="margin-top:10px">
-      <span class="tag">Computer Vision</span>
-      <span class="tag">Time-series</span>
-      <span class="tag">Uncertainty</span>
+    <div>
+      <h1>Sacha DURAIN</h1>
+      <p class="subtitle">
+        Applied Scientist (ML/CV) — uncertainty-aware models · PhD finishing <b>Sep 2026</b> · Available <b>Oct–Dec 2026</b>
+      </p>
+
+      <div class="links">
+        <a href="https://www.linkedin.com/in/TON-LINKEDIN">LinkedIn</a>
+        <a href="https://github.com/TON-USERNAME">GitHub</a>
+        <a href="mailto:tonmail@domaine.com">Email</a>
+        <!-- Optionnel : CV PDF -->
+        <!-- <a href="assets/CV_Sacha_Durain.pdf">CV (PDF)</a> -->
+      </div>
+
+      <div style="margin-top:10px">
+        <span class="badge">Computer Vision</span>
+        <span class="badge">Time-series</span>
+        <span class="badge">Uncertainty Quantification</span>
+        <span class="badge">Surrogate Models</span>
+      </div>
     </div>
-    <p style="margin-top:14px">
-      <a href="https://www.linkedin.com/in/TONLINKEDIN/">LinkedIn</a> ·
-      <a href="https://github.com/TONUSERNAME">GitHub</a> ·
-      <a href="mailto:tonmail@domaine.com">Email</a>
-    </p>
   </header>
 
-  <h2>Projects</h2>
+  <section>
+    <h2>Projects</h2>
+    <div class="grid">
 
-  <div class="card">
-    <h3>Uncertain sensivity analysis of deep ensemble models</h3>
-    <div class="meta">PyTorch · UQ · Explainable learning</div>
+      <div class="card">
+        <h3>Uncertainty Sensitivity Analysis for Deep Ensembles</h3>
+        <div class="meta">PyTorch · Uncertainty Quantification · Explainable ML</div>
+
+        <div>
+          <span class="pill">deep ensembles</span>
+          <span class="pill">calibration</span>
+          <span class="pill">sensitivity / attribution</span>
+        </div>
+
+        <ul>
+          <li><b>Goal:</b> quantify how input features affect both <i>predictions</i> and <i>predictive uncertainty</i>.</li>
+          <li><b>Approach:</b> uncertainty-aware sensitivity measures + calibrated ensemble uncertainty.</li>
+          <li><b>Results:</b> <span class="kpi">add your metric here</span> (ex: +X% calibration / better coverage at same error).</li>
+          <li><b>Links:</b> <a href="https://github.com/...">Code</a> · <a href="https://...">Demo/Report</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Recurrent Neural Network Surrogate Modeling for Dynamical Systems</h3>
+        <div class="meta">PyTorch · Time-series · Surrogate / ROM</div>
+
+        <div>
+          <span class="pill">RNN / LSTM / GRU</span>
+          <span class="pill">sequence modeling</span>
+          <span class="pill">fast inference</span>
+        </div>
+
+        <ul>
+          <li><b>Goal:</b> learn a surrogate model that predicts system response over time from parameters/initial conditions.</li>
+          <li><b>Approach:</b> sequence-to-sequence surrogate + training/validation with temporal splits (no leakage).</li>
+          <li><b>Results:</b> <span class="kpi">speedup ×X</span> <span class="kpi">MAE/RMSE Y</span> <span class="kpi">stability Z</span></li>
+          <li><b>Links:</b> <a href="https://github.com/...">Code</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
     <ul>
-      <li><b>What:</b> …</li>
-      <li><b>Results:</b> Uncertain sensivity analysis </li>
-      <li><b>Links:</b> <a href="https://github.com/...">Code</a> · <a href="https://...">Demo</a></li>
+      <li><b>Paper 1</b> — <a href="https://...">link</a> <span class="kpi">2026</span></li>
+      <li><b>Thesis</b> — (coming soon)</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="card">
-    <h3>Vision → signal → anomaly detection</h3>
-    <div class="meta">CV · video · time-series</div>
+  <section>
+    <h2>Skills</h2>
     <ul>
-      <li><b>What:</b> …</li>
-      <li><b>Results:</b> …</li>
-      <li><b>Links:</b> <a href="https://github.com/...">Code</a></li>
+      <li><b>ML:</b> PyTorch (preferred), JAX (optional), CV, time-series, uncertainty (ensembles, calibration), evaluation & ablations.</li>
+      <li><b>Software:</b> clean code, testing, reproducibility, experiment tracking (W&B/MLflow), Git.</li>
+      <li><b>Compute:</b> GPU training/inference, profiling/optimization (as applicable).</li>
     </ul>
-  </div>
+  </section>
 
-  <h2>Publications</h2>
-  <ul>
-    <li>Paper 1 — lien</li>
-    <li>Thesis — (soon)</li>
-  </ul>
+  <div class="footer">
+    Last update: Jan 2026 · © Sacha Durain
+  </div>
 </body>
 </html>
-
