@@ -3,81 +3,196 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Sacha Durain — Applied Scientist (ML/CV) — uncertainty-aware models." />
-  <title>Sacha DURAIN — Applied Scientist</title>
+
+  <title>Sacha DURAIN — Applied Scientist (ML/CV)</title>
+  <meta name="description" content="Sacha Durain — Applied Scientist (ML/CV). Dynamics, physics simulation, ROM/surrogates, uncertainty-aware models. PhD finishing Sep 2026; available Oct–Dec 2026." />
+
+  <!-- Social preview (optional but recommended) -->
+  <meta property="og:title" content="Sacha DURAIN — Applied Scientist (ML/CV)" />
+  <meta property="og:description" content="Dynamics · Physics simulation · ROM/Surrogate models · Uncertainty-aware ML. PhD finishing Sep 2026; available Oct–Dec 2026." />
+  <!-- <meta property="og:image" content="https://your-domain.com/og-image.png" /> -->
+  <meta property="og:type" content="website" />
+
   <style>
     :root{
-      --bg:#ffffff; --text:#111; --muted:#555; --line:#e8e8e8; --card:#fff;
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:#555555;
+      --line:#e9e9e9;
+      --card:#ffffff;
+      --chip:#fafafa;
+      --shadow: 0 10px 25px rgba(0,0,0,.06);
       --radius:16px;
+      --max: 980px;
+      --focus: 2px solid #111;
     }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b0c10;
+        --text:#f2f4f8;
+        --muted:#b6bcc8;
+        --line:#1d2230;
+        --card:#0f1220;
+        --chip:#0b0f1b;
+        --shadow: 0 12px 30px rgba(0,0,0,.35);
+        --focus: 2px solid #f2f4f8;
+      }
+    }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      max-width: 980px;
       margin: 44px auto;
       padding: 0 16px;
-      line-height: 1.55;
+      max-width: var(--max);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height: 1.6;
       color: var(--text);
       background: var(--bg);
     }
+
+    a{color: inherit; text-decoration: none}
+    a:hover{opacity:.85}
+    a:focus-visible{outline: var(--focus); outline-offset: 3px; border-radius: 8px}
+
+    .skip{
+      position:absolute;
+      left:-999px;
+      top:10px;
+      padding:10px 12px;
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      z-index: 9999;
+    }
+    .skip:focus{left:16px}
+
     header{
       display:flex;
       gap:24px;
       align-items:flex-start;
       justify-content:space-between;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
       padding-bottom: 18px;
       border-bottom: 1px solid var(--line);
     }
-    h1{margin:0 0 8px; font-size: 34px; letter-spacing: .2px;}
-    .subtitle{margin:0 0 10px; color: var(--muted); font-size: 16px;}
-    .links a{margin-right:12px; text-decoration:none; border-bottom:1px solid transparent}
-    .links a:hover{border-bottom-color:var(--text)}
-    .badge{
-      display:inline-block; padding:6px 10px; border:1px solid var(--line);
-      border-radius: 999px; margin: 6px 8px 0 0; font-size: 13px; color: #222;
+
+    h1{
+      margin:0 0 6px;
+      font-size: clamp(28px, 4vw, 36px);
+      letter-spacing: .2px;
+      line-height: 1.15;
     }
-    .pill{
-      display:inline-block; padding:4px 10px; border:1px solid var(--line);
-      border-radius: 999px; margin: 6px 6px 0 0; font-size: 12px; color: #333;
-      background: #fafafa;
+
+    .subtitle{
+      margin:0 0 12px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 72ch;
     }
+
+    .toplinks{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 8px 0 0;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      box-shadow: none;
+      font-size: 13px;
+    }
+    .btn:hover{box-shadow: var(--shadow)}
+    .btn small{color: var(--muted)}
+
+    .chips{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      display:inline-block;
+      padding:6px 10px;
+      border:1px solid var(--line);
+      border-radius: 999px;
+      background: var(--chip);
+      font-size: 12.5px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    main{padding-top: 6px}
+
     section{margin: 22px 0}
-    h2{margin: 22px 0 12px; font-size: 20px}
+    h2{
+      margin: 20px 0 12px;
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+
     .grid{
       display:grid;
       grid-template-columns: 1fr;
       gap: 14px;
     }
+    @media (min-width: 900px){
+      .grid{grid-template-columns: 1fr 1fr;}
+    }
+
     .card{
       border:1px solid var(--line);
       border-radius: var(--radius);
       padding: 16px;
       background: var(--card);
+      box-shadow: none;
     }
-    .card h3{margin:0 0 6px; font-size: 18px}
-    .meta{color: var(--muted); font-size: 14px; margin-bottom: 10px}
+    .card:hover{box-shadow: var(--shadow)}
+    .card h3{margin:0 0 6px; font-size: 17px; line-height: 1.25}
+    .meta{color: var(--muted); font-size: 13.5px; margin-bottom: 10px}
+
     ul{margin: 10px 0 0 18px}
     li{margin: 6px 0}
+
+    .kpis{display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px}
     .kpi{
-      display:inline-block;
-      padding:2px 8px;
+      display:inline-flex;
+      align-items:center;
+      padding:2px 10px;
       border:1px solid var(--line);
       border-radius:999px;
       font-size:12px;
-      color:#333;
-      background:#fff;
-      margin-left: 6px;
+      background: transparent;
+      color: var(--text);
     }
+    .kpi b{margin-right:6px}
 
-    /* image styling for project cards */
+    figure{margin: 12px 0 0}
     .project-img{
       width: 100%;
       height: auto;
-      display: block;
+      display:block;
       border-radius: 12px;
       border: 1px solid var(--line);
-      margin: 12px 0 10px;
+      background: var(--chip);
+    }
+    figcaption{
+      margin-top: 8px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 900px){
+      .two-col{grid-template-columns: 1.2fr .8fr;}
     }
 
     .footer{
@@ -86,152 +201,183 @@
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
     }
-    @media (min-width: 900px){
-      .grid{grid-template-columns: 1fr 1fr;}
+
+    /* Print-friendly */
+    @media print{
+      body{margin: 0; max-width: none}
+      .btn, .chips, .skip {display:none !important}
+      .card{box-shadow:none}
+      a{text-decoration: underline}
     }
   </style>
 </head>
 
 <body>
+  <a class="skip" href="#content">Skip to content</a>
+
   <header>
     <div>
       <h1>Sacha DURAIN</h1>
       <p class="subtitle">
-        Applied Scientist — Dynamics · Physics simulation · ROM/Surrogate models · Uncertainty-aware models · PhD finishing <b>Sep 2026</b> · Available <b>Oct–Dec 2026</b>
+        Applied Scientist — Dynamics · Physics simulation · ROM/Surrogate models · Uncertainty-aware ML
+        · PhD finishing <b>Sep 2026</b> · Available <b>Oct–Dec 2026</b>
       </p>
 
-      <div class="links">
-        <a href="https://www.linkedin.com/in/sacha-durain/">LinkedIn</a>
-        <a href="mailto:sacha.durain@gmail.com">Email</a>
-      </div>
+      <nav class="toplinks" aria-label="Primary links">
+        <a class="btn" href="https://www.linkedin.com/in/sacha-durain/" rel="me">
+          LinkedIn <small>↗</small>
+        </a>
+        <a class="btn" href="mailto:sacha.durain@gmail.com">
+          Email
+        </a>
+        <!-- Optional: add a PDF CV -->
+        <!-- <a class="btn" href="Sacha_Durain_CV.pdf">CV (PDF)</a> -->
+      </nav>
 
-      <div style="margin-top:10px">
-        <span class="badge">Dynamics</span>
-        <span class="badge">Computer Vision</span>
-        <span class="badge">Time-series</span>
-        <span class="badge">Uncertainty Quantification</span>
-        <span class="badge">Surrogate Models / ROM</span>
+      <div class="chips" aria-label="Focus areas">
+        <span class="chip">Dynamics</span>
+        <span class="chip">Computer Vision</span>
+        <span class="chip">Time-series</span>
+        <span class="chip">Uncertainty Quantification</span>
+        <span class="chip">Surrogate Models / ROM</span>
       </div>
     </div>
   </header>
 
-  <section>
-    <h2>Projects from thesis</h2>
-    <div class="grid">
+  <main id="content">
+    <section aria-labelledby="projects">
+      <h2 id="projects">Selected thesis projects</h2>
 
-      <div class="card">
-        <h3>Uncertainty Sensitivity Analysis for Deep Ensembles</h3>
-        <div class="meta">PyTorch · Uncertainty Quantification · Explainable ML</div>
+      <div class="grid">
+        <article class="card">
+          <h3>Uncertainty Sensitivity Analysis for Deep Ensembles</h3>
+          <div class="meta">PyTorch · Uncertainty Quantification · Explainable ML</div>
 
-        <div>
-          <span class="pill">Uncertainty</span>
-          <span class="pill">Surrogate model</span>
-          <span class="pill">Sensitivity</span>
-        </div>
+          <div class="chips" aria-label="Tags">
+            <span class="chip">Uncertainty</span>
+            <span class="chip">Surrogate model</span>
+            <span class="chip">Sensitivity</span>
+          </div>
 
+          <ul>
+            <li><b>Goal:</b> Quantify how input features drive predictions while separating aleatoric vs. epistemic effects.</li>
+            <li><b>Approach:</b> Small physics-simulation dataset modeled with a deep ensemble (10× MLP); uncertainty calibration + attribution.</li>
+            <li><b>Demo:</b> <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb">Beam notebook ↗</a></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>RNN Surrogate Modeling for Dynamical Systems</h3>
+          <div class="meta">PyTorch · Time-series · Surrogate / ROM</div>
+
+          <div class="chips" aria-label="Tags">
+            <span class="chip">RNN / LSTM / GRU</span>
+            <span class="chip">Sequence-to-sequence</span>
+            <span class="chip">Fast inference</span>
+          </div>
+
+          <ul>
+            <li><b>Goal:</b> Predict full time responses from parameters / initial conditions with a lightweight surrogate.</li>
+            <li><b>Approach:</b> Seq2seq training with strict temporal splits (no leakage) + stability checks on rollouts.</li>
+            <li><b>Demo:</b> <a href="https://github.com/sdurain/sdurain.github.io/blob/main/duffing_rnn.ipynb">Duffing oscillator notebook ↗</a></li>
+          </ul>
+
+          <div class="kpis" aria-label="Key results">
+            <span class="kpi"><b>Speedup</b> ×X</span>
+            <span class="kpi"><b>RMSE</b> Y</span>
+            <span class="kpi"><b>Stability</b> Z</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Material Segmentation</h3>
+          <div class="meta">Computer Vision · Segmentation · Materials</div>
+
+          <div class="chips" aria-label="Tags">
+            <span class="chip">Segmentation</span>
+            <span class="chip">Materials</span>
+            <span class="chip">Qualitative overlays</span>
+          </div>
+
+          <figure>
+            <img
+              class="project-img"
+              src="segmentation.png"
+              alt="Example output of material segmentation with predicted masks overlayed on the input image."
+              loading="lazy"
+            />
+            <figcaption>Predicted masks + overlay visualization (example figure).</figcaption>
+          </figure>
+
+          <ul>
+            <li><b>Goal:</b> Segment multiple material classes from images for downstream analysis and monitoring.</li>
+            <li><b>Approach:</b> End-to-end pipeline (preprocessing → training/inference → post-processing) with IoU/Dice evaluation + overlay review.</li>
+            <li><b>Outputs:</b> Per-class masks, overlay visualizations, dataset-level metrics.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Experimental & Numerical Data Acquisition (Brake Squeal)</h3>
+          <div class="meta">Multimodal Sensing · Dynamic Simulation · Reduced-Order Modeling (ROM)</div>
+
+          <div class="chips" aria-label="Tags">
+            <span class="chip">Multimodal acquisition</span>
+            <span class="chip">Thermal</span>
+            <span class="chip">Topography</span>
+            <span class="chip">Time-dependent</span>
+            <span class="chip">ROM</span>
+          </div>
+
+          <ul>
+            <li><b>Goal:</b> Build a dataset (experimental + simulated) to study and predict brake squeal occurrence.</li>
+            <li><b>Experimental:</b> Multimodal measurements combining <b>thermal</b>, <b>surface topography</b>, and <b>dynamic responses</b>.</li>
+            <li><b>Numerical:</b> ROM-based workflow enabling fast parameter sweeps and scalable synthetic data generation.</li>
+            <li><b>Outcome:</b> Dataset used to train robust predictive/monitoring models and support interpretability analyses.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="two-col" aria-labelledby="pubs-skills">
+      <div>
+        <h2 id="pubs-skills">Publications</h2>
         <ul>
-          <li><b>Goal:</b> Quantify how input features influence predictions while accounting for model uncertainty.</li>
-          <li><b>Approach:</b> Small physics-simulation dataset modeled with a deep ensemble of 10 MLPs.</li>
-          <li><b>Beam demo:</b> <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb">Code</a></li>
+          <li><b>Paper 1</b> — <a href="https://...">link ↗</a> <span class="kpi">2026</span></li>
+          <li><b>Thesis</b> — coming soon</li>
         </ul>
+
+        <!-- Optional: add a short “What I’m looking for” -->
+        <div class="card" style="margin-top:14px">
+          <h3 style="margin-bottom:6px">What I’m looking for</h3>
+          <div class="meta">Applied research/industry roles · ML for dynamics/simulation · uncertainty-aware modeling</div>
+          <ul>
+            <li>Teams shipping models into real systems (monitoring, reliability, safety, performance).</li>
+            <li>Problems with a physics/engineering backbone: simulation acceleration, surrogate modeling, data fusion.</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Recurrent Neural Network Surrogate Modeling for Dynamical Systems</h3>
-        <div class="meta">PyTorch · Time-series · Surrogate / ROM</div>
-
-        <div>
-          <span class="pill">RNN / LSTM / GRU</span>
-          <span class="pill">Sequence modeling</span>
-          <span class="pill">Fast inference</span>
+      <aside>
+        <h2>Skills</h2>
+        <div class="card">
+          <ul>
+            <li><b>ML:</b> PyTorch (preferred), JAX (optional), CV/segmentation, time-series, uncertainty (ensembles, calibration), evaluation & ablations.</li>
+            <li><b>Software:</b> clean code, testing, reproducibility, experiment tracking (W&amp;B / MLflow), Git.</li>
+            <li><b>Compute:</b> GPU training/inference, profiling/optimization when needed.</li>
+          </ul>
         </div>
+      </aside>
+    </section>
 
-        <ul>
-          <li><b>Goal:</b> Learn a surrogate model that predicts system response over time from parameters/initial conditions.</li>
-          <li><b>Approach:</b> Sequence-to-sequence surrogate + training/validation with temporal splits (no leakage).</li>
-          <li><b>Results:</b> <span class="kpi">speedup ×X</span> <span class="kpi">MAE/RMSE Y</span> <span class="kpi">stability Z</span></li>
-          <li><b>Oscillator demo:</b> <a href="https://github.com/sdurain/sdurain.github.io/blob/main/duffing_rnn.ipynb">Code</a></li>
-        </ul>
-      </div>
-
-      <!-- PROJECT 3: Material Segmentation (no data acquisition text here) -->
-      <div class="card">
-        <h3>Material Segmentation</h3>
-        <div class="meta">Computer Vision · Segmentation · Materials</div>
-
-        <div>
-          <span class="pill">Segmentation</span>
-          <span class="pill">Materials</span>
-          <span class="pill">CV</span>
-        </div>
-
-        <!-- Replace src with your image path -->
-        <img
-          class="project-img"
-          src="segmentation.png"
-          alt="Preview of the Material Segmentation project"
-          loading="lazy"
-        />
-
-        <ul>
-          <li><b>Goal:</b> Automatically segment multiple material classes from images.</li>
-          <li><b>Approach:</b> Segmentation pipeline (pre-processing, training/inference, post-processing) with IoU/Dice-style metrics and qualitative overlay analysis.</li>
-          <li><b>Outputs:</b> Segmentation masks + qualitative visualizations (overlay).</li>
-        </ul>
-      </div>
-
-      <!-- PROJECT 4: Data Acquisition (Experimental + Numerical) -->
-      <div class="card">
-        <h3>Experimental & Numerical Data Acquisition for Dynamics</h3>
-        <div class="meta">Multimodal Sensing · Dynamic Simulation · Reduced-Order Modeling (ROM)</div>
-
-        <div>
-          <span class="pill">Multimodal acquisition</span>
-          <span class="pill">Thermal</span>
-          <span class="pill">Topography</span>
-          <span class="pill">Time-dependent</span>
-          <span class="pill">ROM</span>
-        </div>
-
-        <ul>
-          <li><b>Goal:</b> Build aligned experimental + simulation datasets for learning and validating dynamic surrogate models.</li>
-
-          <li><b>Experimental acquisition:</b> Multimodal measurements combining
-            <b>thermal imaging</b>, <b>topography</b> (surface height/roughness), and <b>dynamic responses</b> (time-dependent signals).
-          </li>
-
-          <li><b>Numerical acquisition:</b> Time-domain <b>dynamic simulations</b> (CEA &amp; temporal) with a
-            <b>Reduced-Order Model (ROM)</b> to enable fast parameter sweeps and scalable dataset generation.
-          </li>
-
-          <li><b>Outcome:</b> Curated datasets with synchronized modalities, ready for CV/ML training, benchmarking, and uncertainty-aware evaluation.</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <h2>Publications</h2>
-    <ul>
-      <li><b>Paper 1</b> — <a href="https://...">link</a> <span class="kpi">2026</span></li>
-      <li><b>Thesis</b> — (coming soon)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><b>ML:</b> PyTorch (preferred), JAX (optional), computer vision, time-series, uncertainty (ensembles, calibration), evaluation &amp; ablations.</li>
-      <li><b>Software:</b> clean code, testing, reproducibility, experiment tracking (W&amp;B/MLflow), Git.</li>
-      <li><b>Compute:</b> GPU training/inference, profiling/optimization (as applicable).</li>
-    </ul>
-  </section>
-
-  <div class="footer">
-    Last update: Jan 2026 · © Sacha Durain
-  </div>
+    <footer class="footer">
+      <span>Last update: Jan 2026 · © Sacha Durain</span>
+      <span>Paris (EU) · Open to relocation/remote (edit as needed)</span>
+    </footer>
+  </main>
 </body>
 </html>
-
