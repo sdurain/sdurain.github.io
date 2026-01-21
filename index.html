@@ -69,6 +69,17 @@
       background:#fff;
       margin-left: 6px;
     }
+
+    /* NEW: image styling for project cards */
+    .project-img{
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      margin: 12px 0 10px;
+    }
+
     .footer{
       margin-top: 28px;
       padding-top: 16px;
@@ -96,10 +107,11 @@
       </div>
 
       <div style="margin-top:10px">
-        <span class="badge">Computer Vision</span>
+        <span class="badge">Dynamic</span>
+        <span class="badge">Computer vision</span>
         <span class="badge">Time-series</span>
-        <span class="badge">Uncertainty Quantification</span>
-        <span class="badge">Surrogate Models</span>
+        <span class="badge">Uncertainty quantification</span>
+        <span class="badge">Surrogate models / ROM</span>
       </div>
     </div>
   </header>
@@ -122,7 +134,6 @@
           <li><b>Goal:</b> Quantify how input features influence predictions, while accounting for model uncertainty.</li>
           <li><b>Approach:</b> Small physics simulation dataset modeled with a deep ensemble of 10 MLPs.</li>
           <li><b>Beam demo:</b> <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb">Code</a></li>
-
         </ul>
       </div>
 
@@ -141,6 +152,32 @@
           <li><b>Approach:</b> sequence-to-sequence surrogate + training/validation with temporal splits (no leakage).</li>
           <li><b>Results:</b> <span class="kpi">speedup ×X</span> <span class="kpi">MAE/RMSE Y</span> <span class="kpi">stability Z</span></li>
           <li><b>Links:</b> <a href="https://github.com/...">Code</a></li>
+        </ul>
+      </div>
+
+      <!-- NEW PROJECT: Material Segmentation (no code, includes a photo) -->
+      <div class="card">
+        <h3>Material Segmentation</h3>
+        <div class="meta">Computer Vision · Segmentation · Materials</div>
+
+        <div>
+          <span class="pill">Segmentation</span>
+          <span class="pill">Materials</span>
+          <span class="pill">CV</span>
+        </div>
+
+        <!-- Replace src with your image path -->
+        <img
+          class="project-img"
+          src="images/material-segmentation.jpg"
+          alt="Aperçu du projet Material Segmentation"
+          loading="lazy"
+        />
+
+        <ul>
+          <li><b>Goal:</b> Segmenter automatiquement différentes classes de matériaux à partir d’images.</li>
+          <li><b>Approach:</b> pipeline de segmentation (prétraitement, entraînement, post-traitement) avec métriques type IoU/Dice.</li>
+          <li><b>Output:</b> masques de segmentation + visualisation qualitative (overlay).</li>
         </ul>
       </div>
 
@@ -169,7 +206,3 @@
   </div>
 </body>
 </html>
-
-
-
-
