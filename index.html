@@ -155,16 +155,15 @@
         </ul>
       </div>
 
-      <!-- UPDATED PROJECT: Material Segmentation + Experimental & Numerical Data Acquisition -->
+      <!-- PROJECT 3: Material Segmentation (no data acquisition text here) -->
       <div class="card">
-        <h3>Material Segmentation with Experimental & Numerical Data Acquisition</h3>
-        <div class="meta">Computer Vision · Multimodal Data · Dynamics · Reduced-Order Modeling</div>
+        <h3>Material Segmentation</h3>
+        <div class="meta">Computer Vision · Segmentation · Materials</div>
 
         <div>
           <span class="pill">Segmentation</span>
-          <span class="pill">Multimodal acquisition</span>
-          <span class="pill">Dynamic simulation</span>
-          <span class="pill">ROM</span>
+          <span class="pill">Materials</span>
+          <span class="pill">CV</span>
         </div>
 
         <!-- Replace src with your image path -->
@@ -176,19 +175,37 @@
         />
 
         <ul>
-          <li><b>Goal:</b> Automatically segment multiple material classes from images and align them with physics-driven signals.</li>
+          <li><b>Goal:</b> Automatically segment multiple material classes from images.</li>
+          <li><b>Approach:</b> Segmentation pipeline (pre-processing, training/inference, post-processing) with IoU/Dice-style metrics and qualitative overlay analysis.</li>
+          <li><b>Outputs:</b> Segmentation masks + qualitative visualizations (overlay).</li>
+        </ul>
+      </div>
+
+      <!-- PROJECT 4: Data Acquisition (Experimental + Numerical) -->
+      <div class="card">
+        <h3>Experimental & Numerical Data Acquisition for Dynamics</h3>
+        <div class="meta">Multimodal Sensing · Dynamic Simulation · Reduced-Order Modeling (ROM)</div>
+
+        <div>
+          <span class="pill">Multimodal acquisition</span>
+          <span class="pill">Thermal</span>
+          <span class="pill">Topography</span>
+          <span class="pill">Time-dependent</span>
+          <span class="pill">ROM</span>
+        </div>
+
+        <ul>
+          <li><b>Goal:</b> Build aligned experimental + simulation datasets for learning and validating dynamic surrogate models.</li>
 
           <li><b>Experimental acquisition:</b> Multimodal measurements combining
-            <i>thermal</i> imaging, <i>topography</i> (surface height/roughness), and <i>dynamic</i> responses (time-dependent signals).
+            <b>thermal imaging</b>, <b>topography</b> (surface height/roughness), and <b>dynamic responses</b> (time-dependent signals).
           </li>
 
-          <li><b>Numerical acquisition:</b> Dynamic simulations (CEA & time-domain) supported by a
+          <li><b>Numerical acquisition:</b> Time-domain <b>dynamic simulations</b> (CEA &amp; temporal) with a
             <b>Reduced-Order Model (ROM)</b> to enable fast parameter sweeps and scalable dataset generation.
           </li>
 
-          <li><b>Approach:</b> End-to-end segmentation pipeline (pre-processing, training/inference, post-processing) with IoU/Dice-style metrics and qualitative overlay analysis.</li>
-
-          <li><b>Outputs:</b> Segmentation masks, overlays, and uncertainty/confidence maps for robust interpretation across modalities.</li>
+          <li><b>Outcome:</b> Curated datasets with synchronized modalities, ready for CV/ML training, benchmarking, and uncertainty-aware evaluation.</li>
         </ul>
       </div>
 
@@ -206,7 +223,7 @@
   <section>
     <h2>Skills</h2>
     <ul>
-      <li><b>ML:</b> PyTorch (preferred), JAX (optional), computer vision, time-series, uncertainty (ensembles, calibration), evaluation & ablations.</li>
+      <li><b>ML:</b> PyTorch (preferred), JAX (optional), computer vision, time-series, uncertainty (ensembles, calibration), evaluation &amp; ablations.</li>
       <li><b>Software:</b> clean code, testing, reproducibility, experiment tracking (W&amp;B/MLflow), Git.</li>
       <li><b>Compute:</b> GPU training/inference, profiling/optimization (as applicable).</li>
     </ul>
