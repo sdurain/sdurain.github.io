@@ -4,27 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Sacha DURAIN — Applied Scientist (ML/CV)</title>
+  <title>Sacha Durain — Applied Scientist (ML/CV)</title>
   <meta name="description" content="Sacha Durain — Applied Scientist (ML/CV). Dynamics, physics simulation, ROM/surrogates, uncertainty-aware models. PhD finishing Sep 2026; available Oct–Dec 2026." />
 
-  <!-- Social preview (optional but recommended) -->
-  <meta property="og:title" content="Sacha DURAIN — Applied Scientist (ML/CV)" />
+  <!-- Social preview -->
+  <meta property="og:title" content="Sacha Durain — Applied Scientist (ML/CV)" />
   <meta property="og:description" content="Dynamics · Physics simulation · ROM/Surrogate models · Uncertainty-aware ML. PhD finishing Sep 2026; available Oct–Dec 2026." />
-  <!-- <meta property="og:image" content="https://your-domain.com/og-image.png" /> -->
   <meta property="og:type" content="website" />
+  <!-- <meta property="og:image" content="https://your-domain.com/og-image.png" /> -->
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0c10" />
 
   <style>
     :root{
       --bg:#ffffff;
       --text:#111111;
-      --muted:#555555;
+      --muted:#5a5a5a;
       --line:#e9e9e9;
       --card:#ffffff;
       --chip:#fafafa;
       --shadow: 0 10px 25px rgba(0,0,0,.06);
       --radius:16px;
       --max: 980px;
-      --focus: 2px solid #111;
+      --focus: 2px solid currentColor;
+      color-scheme: light dark;
     }
 
     @media (prefers-color-scheme: dark){
@@ -36,12 +41,16 @@
         --card:#0f1220;
         --chip:#0b0f1b;
         --shadow: 0 12px 30px rgba(0,0,0,.35);
-        --focus: 2px solid #f2f4f8;
       }
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *{transition:none !important}
+    }
+
     body{
       margin: 44px auto;
       padding: 0 16px;
@@ -50,11 +59,14 @@
       line-height: 1.6;
       color: var(--text);
       background: var(--bg);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     a{color: inherit; text-decoration: none}
-    a:hover{opacity:.85}
-    a:focus-visible{outline: var(--focus); outline-offset: 3px; border-radius: 8px}
+    a:hover{opacity:.88}
+    a:focus-visible{outline: var(--focus); outline-offset: 3px; border-radius: 10px}
 
     .skip{
       position:absolute;
@@ -110,11 +122,17 @@
       border-radius: 999px;
       box-shadow: none;
       font-size: 13px;
+      white-space: nowrap;
     }
     .btn:hover{box-shadow: var(--shadow)}
     .btn small{color: var(--muted)}
 
-    .chips{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px}
+    .chips{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
     .chip{
       display:inline-block;
       padding:6px 10px;
@@ -127,12 +145,21 @@
     }
 
     main{padding-top: 6px}
+    section, aside{margin: 22px 0}
 
-    section{margin: 22px 0}
     h2{
       margin: 20px 0 12px;
       font-size: 18px;
       letter-spacing: .2px;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 900px){
+      .two-col{grid-template-columns: 1.2fr .8fr;}
     }
 
     .grid{
@@ -153,23 +180,15 @@
     }
     .card:hover{box-shadow: var(--shadow)}
     .card h3{margin:0 0 6px; font-size: 17px; line-height: 1.25}
-    .meta{color: var(--muted); font-size: 13.5px; margin-bottom: 10px}
+
+    .meta{
+      color: var(--muted);
+      font-size: 13.5px;
+      margin-bottom: 10px;
+    }
 
     ul{margin: 10px 0 0 18px}
     li{margin: 6px 0}
-
-    .kpis{display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px}
-    .kpi{
-      display:inline-flex;
-      align-items:center;
-      padding:2px 10px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      font-size:12px;
-      background: transparent;
-      color: var(--text);
-    }
-    .kpi b{margin-right:6px}
 
     figure{margin: 12px 0 0}
     .project-img{
@@ -179,20 +198,13 @@
       border-radius: 12px;
       border: 1px solid var(--line);
       background: var(--chip);
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
     }
     figcaption{
       margin-top: 8px;
       font-size: 12.5px;
       color: var(--muted);
-    }
-
-    .two-col{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    @media (min-width: 900px){
-      .two-col{grid-template-columns: 1.2fr .8fr;}
     }
 
     .footer{
@@ -222,15 +234,15 @@
 
   <header>
     <div>
-      <h1>Sacha DURAIN</h1>
+      <h1>Sacha Durain</h1>
       <p class="subtitle">
         Applied Scientist — Dynamics · Physics simulation · ROM/Surrogate models · Uncertainty-aware ML
         · PhD finishing <b>Sep 2026</b> · Available <b>Oct–Dec 2026</b>
       </p>
 
       <nav class="toplinks" aria-label="Primary links">
-        <a class="btn" href="https://www.linkedin.com/in/sacha-durain/" rel="me">
-          LinkedIn <small>↗</small>
+        <a class="btn" href="https://www.linkedin.com/in/sacha-durain/" rel="me noopener noreferrer" target="_blank">
+          LinkedIn <small aria-hidden="true">↗</small>
         </a>
         <a class="btn" href="mailto:sacha.durain@gmail.com">
           Email
@@ -244,103 +256,113 @@
         <span class="chip">Surrogate Models / ROM</span>
         <span class="chip">Uncertainty</span>
         <span class="chip">Computer Vision</span>
-        <span class="chip">Physic simulation</span>
+        <span class="chip">Physics simulation</span>
       </div>
     </div>
   </header>
 
   <main id="content">
-    <section aria-labelledby="projects">
-      <h2 id="projects">Selected thesis projects</h2>
+    <div class="two-col">
+      <section aria-labelledby="projects">
+        <h2 id="projects">Selected thesis projects</h2>
 
-      <div class="grid">
-        <article class="card">
-          <h3>Uncertainty Sensitivity Analysis for Deep Ensembles</h3>
-          <div class="chips" aria-label="Tags">
-            <span class="chip">Uncertainty</span>
-            <span class="chip">Surrogate model</span>
-            <span class="chip">Sensitivity</span>
-          </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Uncertainty Sensitivity Analysis for Deep Ensembles</h3>
+            <div class="chips" aria-label="Project tags">
+              <span class="chip">Uncertainty</span>
+              <span class="chip">Surrogate model</span>
+              <span class="chip">Sensitivity</span>
+            </div>
 
-          <ul>
-            <li><b>Goal:</b> Quantify how uncertainty input features drive predictions considering epistemic uncertainty</li>
-            <li><b>Approach:</b> Small physics-simulation dataset modeled with a deep ensemble (10× MLP).</li>
-            <li><b>Demo:</b> <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb">Beam notebook ↗</a></li>
-          </ul>
-        </article>
+            <ul>
+              <li><b>Goal:</b> Quantify how input features drive predictions while accounting for epistemic uncertainty.</li>
+              <li><b>Approach:</b> Small physics-simulation dataset modeled with a deep ensemble (10× MLP).</li>
+              <li><b>Demo:</b>
+                <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb"
+                   rel="noopener noreferrer" target="_blank">Beam notebook ↗</a>
+              </li>
+            </ul>
+          </article>
 
-        <article class="card">
-          <h3>RNN Surrogate Modeling for non linear temporal dynamic of braking system</h3>
-          <div class="chips" aria-label="Tags">
-            <span class="chip">Surrogate model</span>
-            <span class="chip">Non linear dynamic</span>
-          </div>
+          <article class="card">
+            <h3>RNN Surrogate Modeling for Nonlinear Braking Dynamics</h3>
+            <div class="chips" aria-label="Project tags">
+              <span class="chip">Surrogate model</span>
+              <span class="chip">Nonlinear dynamics</span>
+              <span class="chip">Time series</span>
+            </div>
 
-          <ul>
-            <li><b>Goal:</b> Surrogate modeling of braking temporal simulation (non linear dynamic)</li>
-            <li><b>Approach:</b> Dataset generated with high fidelity ROM (Craig bampton), surrogate modeling with temporal deep learning approach</li>
-            <li><b>Demo:</b> <a href="https://github.com/sdurain/sdurain.github.io/blob/main/duffing_rnn.ipynb">Duffing oscillator notebook ↗</a></li>
-          </ul>
+            <ul>
+              <li><b>Goal:</b> Surrogate modeling of braking temporal simulations (nonlinear dynamics).</li>
+              <li><b>Approach:</b> Dataset generated with a high-fidelity ROM (Craig–Bampton); temporal surrogate modeling with deep learning.</li>
+              <li><b>Demo:</b>
+                <a href="https://github.com/sdurain/sdurain.github.io/blob/main/duffing_rnn.ipynb"
+                   rel="noopener noreferrer" target="_blank">Duffing oscillator notebook ↗</a>
+              </li>
+            </ul>
+          </article>
 
-        <article class="card">
-          <h3>Braking pad semantic segmentation</h3>
-          <div class="meta">Computer Vision · Segmentation · Materials</div>
+          <article class="card">
+            <h3>Brake Pad Semantic Segmentation</h3>
+            <div class="meta">Computer Vision · Segmentation · Materials</div>
 
-          <div class="chips" aria-label="Tags">
-            <span class="chip">Semantic segmentation</span>
-          </div>
+            <div class="chips" aria-label="Project tags">
+              <span class="chip">Semantic segmentation</span>
+              <span class="chip">Transfer learning</span>
+            </div>
 
-          <figure>
-            <img
-              class="project-img"
-              src="segmentation.png"
-              alt="Example output of material segmentation with predicted masks overlayed on the input image."
-              loading="lazy"
-            />
-            <figcaption>Predicted masks + overlay visualization (example figure).</figcaption>
-          </figure>
-        
-        <ul>
-          <li><b>Goal:</b> Perform semantic segmentation of brake pads to quantify tribological phenomena.</li>
-          <li><b>Preprocessing:</b> Generate initial semantic masks via clustering-based segmentation of SEM images, seeded by superpixels.</li>
-          <li><b>Training:</b> Fine-tune (transfer learning) a SegFormer model, monitored using mIoU and Dice metrics.</li>
-          <li><b>Outputs:</b> Quantitative monitoring of the brake-pad contact interface.</li>
-        </ul>
+            <figure>
+              <img
+                class="project-img"
+                src="segmentation.png"
+                alt="Material segmentation example with predicted masks overlayed on the input image."
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Predicted masks + overlay visualization (example figure).</figcaption>
+            </figure>
 
-        </article>
+            <ul>
+              <li><b>Goal:</b> Segment brake-pad regions to quantify tribological phenomena.</li>
+              <li><b>Preprocessing:</b> Initial semantic masks via clustering-based segmentation of SEM images, seeded by superpixels.</li>
+              <li><b>Training:</b> Fine-tune (transfer learning) a SegFormer model, monitored with mIoU and Dice.</li>
+              <li><b>Outputs:</b> Quantitative monitoring of the brake-pad contact interface.</li>
+            </ul>
+          </article>
 
-        <article class="card">
-          <h3>Experimental & Numerical Data Acquisition (Brake Squeal)</h3>
-          <div class="meta">Multimodal Sensing · Dynamic Simulation · Reduced-Order Modeling (ROM)</div>
+          <article class="card">
+            <h3>Experimental & Numerical Data Acquisition (Brake Squeal)</h3>
+            <div class="meta">Multimodal Sensing · Dynamic Simulation · Reduced-Order Modeling (ROM)</div>
 
-          <div class="chips" aria-label="Tags">
-            <span class="chip">Multimodal acquisition</span>
-            <span class="chip">Topography</span>
-            <span class="chip">Time-dependent</span>
-            <span class="chip">ROM</span>
-          </div>
+            <div class="chips" aria-label="Project tags">
+              <span class="chip">Multimodal acquisition</span>
+              <span class="chip">Topography</span>
+              <span class="chip">Time-dependent</span>
+              <span class="chip">ROM</span>
+            </div>
 
-          <ul>
-            <li><b>Goal:</b> Build a dataset (experimental + simulated) to study and predict brake squeal occurrence.</li>
-            <li><b>Experimental:</b> Multimodal measurements combining thermal, surface topography, and dynamic responses.</li>
-            <li><b>Numerical:</b> ROM-based workflow enabling fast parameter sweeps and scalable synthetic data generation.</li>
-            <li><b>Outcome:</b> Dataset used to train robust predictive/monitoring models and support interpretability analyses.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+            <ul>
+              <li><b>Goal:</b> Build an experimental + simulated dataset to study and predict brake squeal occurrence.</li>
+              <li><b>Experimental:</b> Multimodal measurements combining thermal, surface topography, and dynamic responses.</li>
+              <li><b>Numerical:</b> ROM workflow enabling fast parameter sweeps and scalable synthetic data generation.</li>
+              <li><b>Outcome:</b> Dataset used to train robust predictive/monitoring models and support interpretability analyses.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-      <aside>
-        <h2>Skills</h2>
+      <aside aria-labelledby="skills">
+        <h2 id="skills">Skills</h2>
         <div class="card">
           <ul>
-            <li><b>Deep Learning / ML:</b> PyTorch, JAX; computer vision; dynamic models; uncertainty estimation.</li>
+            <li><b>Deep Learning / ML:</b> PyTorch, JAX; computer vision; dynamics/time-series models; uncertainty estimation.</li>
             <li><b>Programming:</b> Python; Linux environment.</li>
             <li><b>Physics Simulation:</b> Finite Element Analysis (FEA) — Ansys, Abaqus, HyperMesh.</li>
           </ul>
         </div>
       </aside>
-    </section>
+    </div>
 
     <footer class="footer">
       <span>Last update: Jan 2026 · © Sacha Durain</span>
@@ -349,4 +371,3 @@
   </main>
 </body>
 </html>
-
