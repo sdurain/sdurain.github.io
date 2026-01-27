@@ -241,10 +241,10 @@
 
       <div class="chips" aria-label="Focus areas">
         <span class="chip">Dynamics</span>
-        <span class="chip">Computer Vision</span>
-        <span class="chip">Time-series</span>
-        <span class="chip">Uncertainty Quantification</span>
         <span class="chip">Surrogate Models / ROM</span>
+        <span class="chip">Uncertainty</span>
+        <span class="chip">Computer Vision</span>
+        <span class="chip">Physic simulation</span>
       </div>
     </div>
   </header>
@@ -256,8 +256,6 @@
       <div class="grid">
         <article class="card">
           <h3>Uncertainty Sensitivity Analysis for Deep Ensembles</h3>
-          <div class="meta">PyTorch · Uncertainty Quantification · Explainable ML</div>
-
           <div class="chips" aria-label="Tags">
             <span class="chip">Uncertainty</span>
             <span class="chip">Surrogate model</span>
@@ -265,43 +263,31 @@
           </div>
 
           <ul>
-            <li><b>Goal:</b> Quantify how input features drive predictions while separating aleatoric vs. epistemic effects.</li>
-            <li><b>Approach:</b> Small physics-simulation dataset modeled with a deep ensemble (10× MLP); uncertainty calibration + attribution.</li>
+            <li><b>Goal:</b> Quantify how uncertainty input features drive predictions considering epistemic uncertainty</li>
+            <li><b>Approach:</b> Small physics-simulation dataset modeled with a deep ensemble (10× MLP).</li>
             <li><b>Demo:</b> <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb">Beam notebook ↗</a></li>
           </ul>
         </article>
 
         <article class="card">
-          <h3>RNN Surrogate Modeling for Dynamical Systems</h3>
-          <div class="meta">PyTorch · Time-series · Surrogate / ROM</div>
-
+          <h3>RNN Surrogate Modeling for non linear temporal dynamic of braking system</h3>
           <div class="chips" aria-label="Tags">
-            <span class="chip">RNN / LSTM / GRU</span>
-            <span class="chip">Sequence-to-sequence</span>
-            <span class="chip">Fast inference</span>
+            <span class="chip">Surrogate model</span>
+            <span class="chip">Non linear dynamic</span>
           </div>
 
           <ul>
-            <li><b>Goal:</b> Predict full time responses from parameters / initial conditions with a lightweight surrogate.</li>
-            <li><b>Approach:</b> Seq2seq training with strict temporal splits (no leakage) + stability checks on rollouts.</li>
+            <li><b>Goal:</b> Surrogate modeling of braking temporal simulation (non linear dynamic)</li>
+            <li><b>Approach:</b> Dataset generated with high fidelity ROM (Craig bampton), surrogate modeling with temporal deep learning approach</li>
             <li><b>Demo:</b> <a href="https://github.com/sdurain/sdurain.github.io/blob/main/duffing_rnn.ipynb">Duffing oscillator notebook ↗</a></li>
           </ul>
 
-          <div class="kpis" aria-label="Key results">
-            <span class="kpi"><b>Speedup</b> ×X</span>
-            <span class="kpi"><b>RMSE</b> Y</span>
-            <span class="kpi"><b>Stability</b> Z</span>
-          </div>
-        </article>
-
         <article class="card">
-          <h3>Material Segmentation</h3>
+          <h3>Braking pad semantic segmentation</h3>
           <div class="meta">Computer Vision · Segmentation · Materials</div>
 
           <div class="chips" aria-label="Tags">
-            <span class="chip">Segmentation</span>
-            <span class="chip">Materials</span>
-            <span class="chip">Qualitative overlays</span>
+            <span class="chip">Semantic segmentation</span>
           </div>
 
           <figure>
@@ -313,12 +299,14 @@
             />
             <figcaption>Predicted masks + overlay visualization (example figure).</figcaption>
           </figure>
+        
+        <ul>
+          <li><b>Goal:</b> Perform semantic segmentation of brake pads to quantify tribological phenomena.</li>
+          <li><b>Preprocessing:</b> Generate initial semantic masks via clustering-based segmentation of SEM images, seeded by superpixels.</li>
+          <li><b>Training:</b> Fine-tune (transfer learning) a SegFormer model, monitored using mIoU and Dice metrics.</li>
+          <li><b>Outputs:</b> Quantitative monitoring of the brake-pad contact interface.</li>
+        </ul>
 
-          <ul>
-            <li><b>Goal:</b> Segment multiple material classes from images for downstream analysis and monitoring.</li>
-            <li><b>Approach:</b> End-to-end pipeline (preprocessing → training/inference → post-processing) with IoU/Dice evaluation + overlay review.</li>
-            <li><b>Outputs:</b> Per-class masks, overlay visualizations, dataset-level metrics.</li>
-          </ul>
         </article>
 
         <article class="card">
@@ -327,7 +315,6 @@
 
           <div class="chips" aria-label="Tags">
             <span class="chip">Multimodal acquisition</span>
-            <span class="chip">Thermal</span>
             <span class="chip">Topography</span>
             <span class="chip">Time-dependent</span>
             <span class="chip">ROM</span>
@@ -335,7 +322,7 @@
 
           <ul>
             <li><b>Goal:</b> Build a dataset (experimental + simulated) to study and predict brake squeal occurrence.</li>
-            <li><b>Experimental:</b> Multimodal measurements combining <b>thermal</b>, <b>surface topography</b>, and <b>dynamic responses</b>.</li>
+            <li><b>Experimental:</b> Multimodal measurements combining thermal, surface topography, and dynamic responses.</li>
             <li><b>Numerical:</b> ROM-based workflow enabling fast parameter sweeps and scalable synthetic data generation.</li>
             <li><b>Outcome:</b> Dataset used to train robust predictive/monitoring models and support interpretability analyses.</li>
           </ul>
@@ -343,32 +330,13 @@
       </div>
     </section>
 
-    <section class="two-col" aria-labelledby="pubs-skills">
-      <div>
-        <h2 id="pubs-skills">Publications</h2>
-        <ul>
-          <li><b>Paper 1</b> — <a href="https://...">link ↗</a> <span class="kpi">2026</span></li>
-          <li><b>Thesis</b> — coming soon</li>
-        </ul>
-
-        <!-- Optional: add a short “What I’m looking for” -->
-        <div class="card" style="margin-top:14px">
-          <h3 style="margin-bottom:6px">What I’m looking for</h3>
-          <div class="meta">Applied research/industry roles · ML for dynamics/simulation · uncertainty-aware modeling</div>
-          <ul>
-            <li>Teams shipping models into real systems (monitoring, reliability, safety, performance).</li>
-            <li>Problems with a physics/engineering backbone: simulation acceleration, surrogate modeling, data fusion.</li>
-          </ul>
-        </div>
-      </div>
-
       <aside>
         <h2>Skills</h2>
         <div class="card">
           <ul>
-            <li><b>ML:</b> PyTorch (preferred), JAX (optional), CV/segmentation, time-series, uncertainty (ensembles, calibration), evaluation & ablations.</li>
-            <li><b>Software:</b> clean code, testing, reproducibility, experiment tracking (W&amp;B / MLflow), Git.</li>
-            <li><b>Compute:</b> GPU training/inference, profiling/optimization when needed.</li>
+            <li><b>Deep Learning / ML:</b> PyTorch, JAX; computer vision; dynamic models; uncertainty estimation.</li>
+            <li><b>Programming:</b> Python; Linux environment.</li>
+            <li><b>Physics Simulation:</b> Finite Element Analysis (FEA) — Ansys, Abaqus, HyperMesh.</li>
           </ul>
         </div>
       </aside>
@@ -381,3 +349,4 @@
   </main>
 </body>
 </html>
+
