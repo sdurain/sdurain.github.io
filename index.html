@@ -153,15 +153,6 @@
       letter-spacing: .2px;
     }
 
-    .two-col{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    @media (min-width: 900px){
-      .two-col{grid-template-columns: 1.2fr .8fr;}
-    }
-
     .grid{
       display:grid;
       grid-template-columns: 1fr;
@@ -262,107 +253,106 @@
   </header>
 
   <main id="content">
-    <div class="two-col">
-      <section aria-labelledby="projects">
-        <h2 id="projects">Selected thesis projects</h2>
+    <section aria-labelledby="projects">
+      <h2 id="projects">Selected thesis projects</h2>
 
-        <div class="grid">
-          <article class="card">
-            <h3>Uncertainty Sensitivity Analysis for Deep Ensembles</h3>
-            <div class="chips" aria-label="Project tags">
-              <span class="chip">Uncertainty</span>
-              <span class="chip">Surrogate model</span>
-              <span class="chip">Sensitivity</span>
-            </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Uncertainty Sensitivity Analysis for Deep Ensembles</h3>
+          <div class="chips" aria-label="Project tags">
+            <span class="chip">Uncertainty</span>
+            <span class="chip">Surrogate model</span>
+            <span class="chip">Sensitivity</span>
+          </div>
 
-            <ul>
-              <li><b>Goal:</b> Quantify how input features drive predictions while accounting for epistemic uncertainty.</li>
-              <li><b>Approach:</b> Small physics-simulation dataset modeled with a deep ensemble (10× MLP).</li>
-              <li><b>Demo:</b>
-                <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb"
-                   rel="noopener noreferrer" target="_blank">Beam notebook ↗</a>
-              </li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>RNN Surrogate Modeling for Nonlinear Braking Dynamics</h3>
-            <div class="chips" aria-label="Project tags">
-              <span class="chip">Surrogate model</span>
-              <span class="chip">Nonlinear dynamics</span>
-              <span class="chip">Time series</span>
-            </div>
-
-            <ul>
-              <li><b>Goal:</b> Surrogate modeling of braking temporal simulations (nonlinear dynamics).</li>
-              <li><b>Approach:</b> Dataset generated with a high-fidelity ROM (Craig–Bampton); temporal surrogate modeling with deep learning.</li>
-              <li><b>Demo:</b>
-                <a href="https://github.com/sdurain/sdurain.github.io/blob/main/duffing_rnn.ipynb"
-                   rel="noopener noreferrer" target="_blank">Duffing oscillator notebook ↗</a>
-              </li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Brake Pad Semantic Segmentation</h3>
-            <div class="meta">Computer Vision · Segmentation · Materials</div>
-
-            <div class="chips" aria-label="Project tags">
-              <span class="chip">Semantic segmentation</span>
-              <span class="chip">Transfer learning</span>
-            </div>
-
-            <figure>
-              <img
-                class="project-img"
-                src="segmentation.png"
-                alt="Material segmentation example with predicted masks overlayed on the input image."
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>Predicted masks + overlay visualization (example figure).</figcaption>
-            </figure>
-
-            <ul>
-              <li><b>Goal:</b> Segment brake-pad regions to quantify tribological phenomena.</li>
-              <li><b>Preprocessing:</b> Initial semantic masks via clustering-based segmentation of SEM images, seeded by superpixels.</li>
-              <li><b>Training:</b> Fine-tune (transfer learning) a SegFormer model, monitored with mIoU and Dice.</li>
-              <li><b>Outputs:</b> Quantitative monitoring of the brake-pad contact interface.</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Experimental & Numerical Data Acquisition (Brake Squeal)</h3>
-            <div class="meta">Multimodal Sensing · Dynamic Simulation · Reduced-Order Modeling (ROM)</div>
-
-            <div class="chips" aria-label="Project tags">
-              <span class="chip">Multimodal acquisition</span>
-              <span class="chip">Topography</span>
-              <span class="chip">Time-dependent</span>
-              <span class="chip">ROM</span>
-            </div>
-
-            <ul>
-              <li><b>Goal:</b> Build an experimental + simulated dataset to study and predict brake squeal occurrence.</li>
-              <li><b>Experimental:</b> Multimodal measurements combining thermal, surface topography, and dynamic responses.</li>
-              <li><b>Numerical:</b> ROM workflow enabling fast parameter sweeps and scalable synthetic data generation.</li>
-              <li><b>Outcome:</b> Dataset used to train robust predictive/monitoring models and support interpretability analyses.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <aside aria-labelledby="skills">
-        <h2 id="skills">Skills</h2>
-        <div class="card">
           <ul>
-            <li><b>Deep Learning / ML:</b> PyTorch, JAX; computer vision; dynamics/time-series models; uncertainty estimation.</li>
-            <li><b>Programming:</b> Python; Linux environment.</li>
-            <li><b>Physics Simulation:</b> Finite Element Analysis (FEA) — Ansys, Abaqus, HyperMesh.</li>
+            <li><b>Goal:</b> Quantify how input features drive predictions while accounting for epistemic uncertainty.</li>
+            <li><b>Approach:</b> Small physics-simulation dataset modeled with a deep ensemble (10× MLP).</li>
+            <li><b>Demo:</b>
+              <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb"
+                 rel="noopener noreferrer" target="_blank">Beam notebook ↗</a>
+            </li>
           </ul>
-        </div>
-      </aside>
-    </div>
+        </article>
+
+        <article class="card">
+          <h3>RNN Surrogate Modeling for Nonlinear Braking Dynamics</h3>
+          <div class="chips" aria-label="Project tags">
+            <span class="chip">Surrogate model</span>
+            <span class="chip">Nonlinear dynamics</span>
+            <span class="chip">Time series</span>
+          </div>
+
+          <ul>
+            <li><b>Goal:</b> Surrogate modeling of braking temporal simulations (nonlinear dynamics).</li>
+            <li><b>Approach:</b> Dataset generated with a high-fidelity ROM (Craig–Bampton); temporal surrogate modeling with deep learning.</li>
+            <li><b>Demo:</b>
+              <a href="https://github.com/sdurain/sdurain.github.io/blob/main/duffing_rnn.ipynb"
+                 rel="noopener noreferrer" target="_blank">Duffing oscillator notebook ↗</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Brake Pad Semantic Segmentation</h3>
+          <div class="meta">Computer Vision · Segmentation · Materials</div>
+
+          <div class="chips" aria-label="Project tags">
+            <span class="chip">Semantic segmentation</span>
+            <span class="chip">Transfer learning</span>
+          </div>
+
+          <figure>
+            <img
+              class="project-img"
+              src="segmentation.png"
+              alt="Material segmentation example with predicted masks overlayed on the input image."
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Predicted masks + overlay visualization (example figure).</figcaption>
+          </figure>
+
+          <ul>
+            <li><b>Goal:</b> Segment brake-pad regions to quantify tribological phenomena.</li>
+            <li><b>Preprocessing:</b> Initial semantic masks via clustering-based segmentation of SEM images, seeded by superpixels.</li>
+            <li><b>Training:</b> Fine-tune (transfer learning) a SegFormer model, monitored with mIoU and Dice.</li>
+            <li><b>Outputs:</b> Quantitative monitoring of the brake-pad contact interface.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Experimental & Numerical Data Acquisition (Brake Squeal)</h3>
+          <div class="meta">Multimodal Sensing · Dynamic Simulation · Reduced-Order Modeling (ROM)</div>
+
+          <div class="chips" aria-label="Project tags">
+            <span class="chip">Multimodal acquisition</span>
+            <span class="chip">Topography</span>
+            <span class="chip">Time-dependent</span>
+            <span class="chip">ROM</span>
+          </div>
+
+          <ul>
+            <li><b>Goal:</b> Build an experimental + simulated dataset to study and predict brake squeal occurrence.</li>
+            <li><b>Experimental:</b> Multimodal measurements combining thermal, surface topography, and dynamic responses.</li>
+            <li><b>Numerical:</b> ROM workflow enabling fast parameter sweeps and scalable synthetic data generation.</li>
+            <li><b>Outcome:</b> Dataset used to train robust predictive/monitoring models and support interpretability analyses.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills moved below projects -->
+    <section aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
+      <div class="card">
+        <ul>
+          <li><b>Deep Learning / ML:</b> PyTorch, JAX; computer vision; dynamics/time-series models; uncertainty estimation.</li>
+          <li><b>Programming:</b> Python; Linux environment.</li>
+          <li><b>Physics Simulation:</b> Finite Element Analysis (FEA) — Ansys, Abaqus, HyperMesh.</li>
+        </ul>
+      </div>
+    </section>
 
     <footer class="footer">
       <span>Last update: Jan 2026 · © Sacha Durain</span>
