@@ -236,7 +236,10 @@
           LinkedIn <small aria-hidden="true">↗</small>
         </a>
         <a class="btn" href="mailto:sacha.durain@gmail.com">
-          Email
+          Mail
+        </a>
+        <a class="btn" href="https://github.com/sdurain/sdurain.github.io/blob/main/cv_sacha_DURAIN.pdf" rel="me noopener noreferrer" target="_blank">
+          Resume <small aria-hidden="true">↗</small>
         </a>
         <!-- Optional: add a PDF CV -->
         <!-- <a class="btn" href="Sacha_Durain_CV.pdf">CV (PDF)</a> -->
@@ -258,21 +261,23 @@
 
       <div class="grid">
         <article class="card">
-          <h3>Uncertainty Sensitivity Analysis for Deep Ensembles</h3>
+          <h3>Uncertainty sensitivity snalysis with deep ensembles</h3>
           <div class="chips" aria-label="Project tags">
             <span class="chip">Uncertainty</span>
             <span class="chip">Surrogate model</span>
             <span class="chip">Sensitivity</span>
           </div>
 
-          <ul>
-            <li><b>Goal:</b> Quantify how input features drive predictions while accounting for epistemic uncertainty.</li>
-            <li><b>Approach:</b> Small physics-simulation dataset modeled with a deep ensemble (10× MLP).</li>
-            <li><b>Demo:</b>
-              <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb"
-                 rel="noopener noreferrer" target="_blank">Beam notebook ↗</a>
-            </li>
-          </ul>
+      <ul>
+        <li><b>Goal:</b> Quantify the feature importance for braking stability using a small simulation dataset.</li>
+        <li><b>Data generation:</b> Low dataset physic simulation of braking stability (CEA simulation).</li>
+        <li><b>Approach:</b> Surrogate model with a deep ensemble (10× MLP).</li>
+        <li><b>Result:</b> Sensitivity analysis that accounts epistemic uncertainty.</li>
+        <li><b>Demo:</b>
+          <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb"
+             rel="noopener noreferrer" target="_blank">Beam notebook ↗</a>
+        </li>
+      </ul>
         </article>
 
         <article class="card">
@@ -280,12 +285,12 @@
           <div class="chips" aria-label="Project tags">
             <span class="chip">Surrogate model</span>
             <span class="chip">Nonlinear dynamics</span>
-            <span class="chip">Time series</span>
           </div>
 
           <ul>
-            <li><b>Goal:</b> Surrogate modeling of braking temporal simulations (nonlinear dynamics).</li>
-            <li><b>Approach:</b> Dataset generated with a high-fidelity ROM (Craig–Bampton); temporal surrogate modeling with deep learning.</li>
+            <li><b>Data generation:</b> Dataset generated with a high-fidelity ROM (Craig–Bampton).</li>
+            <li><b>Approach:</b> RNN-based surrogate model trained on spectrogram</li>
+            <li><b>Result:</b> High-fidelity predictions and demonstrates extrapolation capability.</li>
             <li><b>Demo:</b>
               <a href="https://github.com/sdurain/sdurain.github.io/blob/main/duffing_rnn.ipynb"
                  rel="noopener noreferrer" target="_blank">Duffing oscillator notebook ↗</a>
@@ -300,6 +305,7 @@
           <div class="chips" aria-label="Project tags">
             <span class="chip">Semantic segmentation</span>
             <span class="chip">Transfer learning</span>
+            <span class="chip">Transformer</span>
           </div>
 
           <figure>
@@ -314,10 +320,9 @@
           </figure>
 
           <ul>
-            <li><b>Goal:</b> Segment brake-pad regions to quantify tribological phenomena.</li>
-            <li><b>Preprocessing:</b> Initial semantic masks via clustering-based segmentation of SEM images, seeded by superpixels.</li>
-            <li><b>Training:</b> Fine-tune (transfer learning) a SegFormer model, monitored with mIoU and Dice.</li>
-            <li><b>Outputs:</b> Quantitative monitoring of the brake-pad contact interface.</li>
+            <li><b>Data generation:</b> Multimodal dataset (optical and SEM) of brake-pad material with pseudo-annotations.</li>
+            <li><b>Approach:</b> Fine-tune a SegFormer model via transfer learning.</li>
+            <li><b>Result:</b> High-fidelity semantic masks enabling quantitative monitoring of brake-pad material.</li>
           </ul>
         </article>
 
@@ -327,16 +332,15 @@
 
           <div class="chips" aria-label="Project tags">
             <span class="chip">Multimodal acquisition</span>
-            <span class="chip">Topography</span>
-            <span class="chip">Time-dependent</span>
+            <span class="chip">Signal processing</span>
             <span class="chip">ROM</span>
           </div>
 
           <ul>
             <li><b>Goal:</b> Build an experimental + simulated dataset to study and predict brake squeal occurrence.</li>
-            <li><b>Experimental:</b> Multimodal measurements combining thermal, surface topography, and dynamic responses.</li>
+            <li><b>Experimental:</b> Multimodal measurements combining thermal, surface topography, static, and dynamic responses.</li>
             <li><b>Numerical:</b> ROM workflow enabling fast parameter sweeps and scalable synthetic data generation.</li>
-            <li><b>Outcome:</b> Dataset used to train robust predictive/monitoring models and support interpretability analyses.</li>
+            <li><b>Outcome:</b> Dataset used to train robust predictive models and support interpretability analyses.</li>
           </ul>
         </article>
       </div>
@@ -347,9 +351,10 @@
       <h2 id="skills">Skills</h2>
       <div class="card">
         <ul>
-          <li><b>Deep Learning / ML:</b> PyTorch, JAX; computer vision; dynamics/time-series models; uncertainty estimation.</li>
-          <li><b>Programming:</b> Python; Linux environment.</li>
-          <li><b>Physics Simulation:</b> Finite Element Analysis (FEA) — Ansys, Abaqus, HyperMesh.</li>
+          <li><b>Deep Learning / ML:</b> SciML, unsupervised, supervised, computer vision and uncertainty (PyTorch, Scikit-learn).</li>
+          <li><b>Numerical simulation:</b> FE modeling for dynamics and thermal analysis (ANSYS, Abaqus, HyperMesh).</li>
+          <li><b>Data analysis / visualization:</b> NumPy, Pandas, Matplotlib, Seaborn, Plotly.</li>
+          <li><b>Programming:</b> Python, Matlab, Bash.</li>
         </ul>
       </div>
     </section>
@@ -361,4 +366,5 @@
   </main>
 </body>
 </html>
+
 
