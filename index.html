@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Sacha Durain - PhD candidate - Dynamics & Scientific machine learning</title>
-  <meta name="description" content="Sacha Durain - PhD candidate - Dynamics & Scientific machine learning. PhD finishing Sep 2026" />
+  <title>Sacha Durain — PhD Candidate in Dynamics & Scientific Machine Learning</title>
+  <meta name="description" content="Sacha Durain — PhD candidate in dynamics, friction-induced vibrations and scientific machine learning. PhD expected September 2026." />
 
   <!-- Social preview -->
-  <meta property="og:title" content="Sacha Durain — Applied Scientist (ML/CV)" />
-  <meta property="og:description" content="Dynamics · Physics simulation · ROM/Surrogate models · Uncertainty-aware ML . Computer vision" />
+  <meta property="og:title" content="Sacha Durain — PhD Candidate | Dynamics & Scientific Machine Learning" />
+  <meta property="og:description" content="Dynamics · Physics-based simulation · ROM and surrogate models · Uncertainty-aware machine learning · Computer vision" />
   <meta property="og:type" content="website" />
   <!-- <meta property="og:image" content="https://your-domain.com/og-image.png" /> -->
 
@@ -227,7 +227,7 @@
     <div>
       <h1>Sacha Durain</h1>
       <p class="subtitle">
-        <b>PhD candidate</b> in Dynamics & Scientific machine learning· PhD finishing <b>Sep 2026</b>
+        <b>PhD candidate</b> in dynamics, friction-induced vibrations and scientific machine learning · PhD expected <b>September 2026</b>
       </p>
 
       <nav class="toplinks" aria-label="Primary links">
@@ -237,19 +237,18 @@
         <a class="btn" href="mailto:sacha.durain@gmail.com">
           Mail
         </a>
-        <a class="btn" href="https://github.com/sdurain/sdurain.github.io/blob/main/cv_sacha_DURAIN.pdf" rel="me noopener noreferrer" target="_blank">
-          Resume <small aria-hidden="true">↗</small>
+        <a class="btn" href="https://github.com/sdurain" rel="me noopener noreferrer" target="_blank">
+          GitHub <small aria-hidden="true">↗</small>
         </a>
-        <!-- Optional: add a PDF CV -->
-        <!-- <a class="btn" href="Sacha_Durain_CV.pdf">CV (PDF)</a> -->
       </nav>
 
       <div class="chips" aria-label="Focus areas">
         <span class="chip">Dynamics</span>
-        <span class="chip">Surrogate Models / ROM</span>
+        <span class="chip">Friction-induced vibrations</span>
+        <span class="chip">ROM / Surrogate Models</span>
         <span class="chip">Uncertainty</span>
         <span class="chip">Computer Vision</span>
-        <span class="chip">Physics simulation</span>
+        <span class="chip">Physics-based simulation</span>
       </div>
     </div>
   </header>
@@ -260,23 +259,23 @@
 
       <div class="grid">
         <article class="card">
-          <h3>Uncertainty sensitivity snalysis with deep ensembles</h3>
+          <h3>Uncertainty and sensitivity analysis with deep ensembles</h3>
           <div class="chips" aria-label="Project tags">
             <span class="chip">Uncertainty</span>
             <span class="chip">Surrogate model</span>
-            <span class="chip">Sensitivity</span>
+            <span class="chip">Sensitivity analysis</span>
           </div>
 
-      <ul>
-        <li><b>Goal:</b> Quantify the feature importance for braking stability using a small simulation dataset.</li>
-        <li><b>Data generation:</b> Low dataset physic simulation of braking stability (CEA simulation).</li>
-        <li><b>Approach:</b> Surrogate model with a deep ensemble (10× MLP).</li>
-        <li><b>Result:</b> Sensitivity analysis that accounts epistemic uncertainty.</li>
-        <li><b>Demo:</b>
-          <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb"
-             rel="noopener noreferrer" target="_blank">Beam notebook ↗</a>
-        </li>
-      </ul>
+          <ul>
+            <li><b>Goal:</b> Quantify feature importance and prediction uncertainty for braking stability using limited simulation data.</li>
+            <li><b>Data generation:</b> Small physics-based simulation dataset from complex eigenvalue analysis (CEA).</li>
+            <li><b>Approach:</b> Deep-ensemble surrogate model based on 10 MLPs.</li>
+            <li><b>Result:</b> Sensitivity analysis accounting for epistemic uncertainty.</li>
+            <li><b>Demo:</b>
+              <a href="https://github.com/sdurain/sdurain.github.io/blob/main/Beam_MLP_uncertainty.ipynb"
+                 rel="noopener noreferrer" target="_blank">Beam notebook ↗</a>
+            </li>
+          </ul>
         </article>
 
         <article class="card">
@@ -284,13 +283,14 @@
           <div class="chips" aria-label="Project tags">
             <span class="chip">Surrogate model</span>
             <span class="chip">Nonlinear dynamics</span>
+            <span class="chip">Long-time forecasting</span>
           </div>
 
           <ul>
-            <li><b>Goal:</b>Develop a surrogate model of system dynamics to enable long-time forecasting..</li>
-            <li><b>Data generation:</b> Dataset generated with a high-fidelity ROM (Craig–Bampton).</li>
-            <li><b>Approach:</b> RNN-based surrogate model trained on spectrogram</li>
-            <li><b>Result:</b> High-fidelity predictions and demonstrates extrapolation capability.</li>
+            <li><b>Goal:</b> Develop a surrogate model of nonlinear system dynamics for long-time forecasting.</li>
+            <li><b>Data generation:</b> High-fidelity reduced-order simulations based on the Craig–Bampton method.</li>
+            <li><b>Approach:</b> RNN-based surrogate model trained on spectrogram representations.</li>
+            <li><b>Result:</b> High-fidelity predictions with demonstrated extrapolation capabilities.</li>
             <li><b>Demo:</b>
               <a href="https://github.com/sdurain/sdurain.github.io/blob/main/duffing_rnn.ipynb"
                  rel="noopener noreferrer" target="_blank">Duffing oscillator notebook ↗</a>
@@ -310,23 +310,23 @@
             <img
               class="project-img"
               src="segmentation.png"
-              alt="Material segmentation example with predicted masks overlayed on the input image."
+              alt="Material segmentation example with predicted masks overlaid on the input image."
               loading="lazy"
               decoding="async"
             />
-            <figcaption>Input data and predicted mask (example figure).</figcaption>
+            <figcaption>Input data and predicted mask example.</figcaption>
           </figure>
 
           <ul>
-            <li><b>Goal:</b>Quantify and monitor tribological phenomena at the brake contact interface.</li>
-            <li><b>Data generation:</b> Multimodal dataset (optical and SEM) of brake-pad material with pseudo-annotations.</li>
-            <li><b>Approach:</b> Fine-tune a SegFormer model via transfer learning.</li>
-            <li><b>Result:</b> High-fidelity semantic masks enabling quantitative monitoring of brake-pad material.</li>
+            <li><b>Goal:</b> Quantify and track tribological surface evolution at the brake contact interface.</li>
+            <li><b>Data generation:</b> Multimodal dataset of optical and SEM images with pseudo-annotations.</li>
+            <li><b>Approach:</b> Fine-tuned SegFormer model using transfer learning.</li>
+            <li><b>Result:</b> Accurate semantic masks enabling quantitative monitoring of material classes and surface evolution.</li>
           </ul>
         </article>
 
         <article class="card">
-          <h3>Experimental & numerical data acquisition (brake squeal)</h3>
+          <h3>Experimental and numerical data acquisition for brake squeal</h3>
           <div class="chips" aria-label="Project tags">
             <span class="chip">Multimodal acquisition</span>
             <span class="chip">Signal processing</span>
@@ -335,30 +335,29 @@
           </div>
 
           <ul>
-            <li><b>Goal:</b> Build an experimental + simulated dataset to study and predict brake squeal occurrence.</li>
-            <li><b>Experimental:</b> Multimodal measurements combining thermal, surface topography, static, and dynamic responses.</li>
-            <li><b>Numerical:</b> ROM workflow enabling fast parameter sweeps and scalable synthetic data generation.</li>
-            <li><b>Outcome:</b> Dataset used to train robust predictive models and support interpretability analyses.</li>
+            <li><b>Goal:</b> Build experimental and simulated datasets to study and predict brake squeal occurrence.</li>
+            <li><b>Experimental:</b> Multimodal measurements combining temperature, surface topography, contact states, and dynamic responses.</li>
+            <li><b>Numerical:</b> Reduced-order modeling workflow enabling fast parameter sweeps and scalable synthetic data generation.</li>
+            <li><b>Outcome:</b> Dataset used to train predictive models and support physically interpretable analyses.</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <!-- Skills moved below projects -->
     <section aria-labelledby="skills">
       <h2 id="skills">Skills</h2>
       <div class="card">
         <ul>
-          <li><b>Deep learning / ML:</b> SciML, unsupervised, supervised, computer vision and uncertainty (PyTorch, Scikit-learn).</li>
-          <li><b>Numerical simulation:</b> FE modeling for dynamics and thermal analysis (Ansys, Abaqus, HyperMesh).</li>
+          <li><b>Deep learning / ML:</b> Scientific machine learning, supervised and unsupervised learning, computer vision, and uncertainty quantification (PyTorch, scikit-learn).</li>
+          <li><b>Numerical simulation:</b> Finite element modeling for dynamics, contact, and thermal analysis (Ansys, Abaqus, HyperMesh).</li>
           <li><b>Data analysis / visualization:</b> NumPy, Pandas, Matplotlib, Seaborn, Plotly.</li>
-          <li><b>Programming:</b> Python, Matlab, Bash.</li>
+          <li><b>Programming:</b> Python, MATLAB, Bash.</li>
         </ul>
       </div>
     </section>
 
     <footer class="footer">
-      <span>Last update: Jan 2026 · © Sacha Durain</span>
+      <span>Last update: June 2026 · © Sacha Durain</span>
     </footer>
   </main>
 </body>
